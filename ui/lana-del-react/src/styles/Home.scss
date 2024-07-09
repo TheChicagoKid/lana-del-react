@@ -1,0 +1,31 @@
+@import './variables';
+@import './mixins';
+
+.home {
+  font-family: $font-family;
+  padding: 2rem;
+
+  h1 {
+    color: $primary-color;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      @include card;
+      margin-bottom: 1rem;
+
+      a {
+        text-decoration: none;
+        color: $primary-color;
+        transition: color 0.3s;
+
+        &:hover {
+          color: darken($primary-color, 10%);
+        }
+      }
+    }
+  }
+}

@@ -25,7 +25,8 @@ public class CommentService {
     public CommentDTO createComment(CommentDTO commentDTO) {
         Comment comment = new Comment();
         comment.setText(commentDTO.getText());
-        comment.setAlbum(albumRepository.findById(commentDTO.getAlbumId()).orElseThrow(() -> new RuntimeException("Album not found")));
+        comment.setAlbum(albumRepository.findById(commentDTO.getAlbumId()).orElseThrow(() ->
+                new RuntimeException("Album not found")));
         commentRepository.save(comment);
         return convertToDTO(comment);
     }

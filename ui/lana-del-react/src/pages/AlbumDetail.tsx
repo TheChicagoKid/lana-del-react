@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import useAlbumStore from '../store/Store.ts'
 import { useParams } from "react-router-dom";
+import "../styles/AlbumDetail.scss"
 
 interface Album {
     id: number;
@@ -43,22 +44,25 @@ const AlbumDetail = () => {
     }
 
     return (
-        <div>
+        <div className="album-detail">
             <h1>{album.title}</h1>
             <p>Release Date: {album.releaseDate}</p>
             <img src={album.coverUrl} alt={album.title} />
-            <h2>Comments</h2>
-            <ul>
-                {album.comments.map((comment) => (
-                    <li key={comment.id}>{comment.text}</li>
-                ))}
-            </ul>
-            <input
-                type="text"
-                value={commentText}
-                onChange={(e) => setCommentText(e.target.value)}
-            />
-            <button onClick={handleAddComment}>Add Comment</button>
+            <div className="comments">
+                <h2>Comments</h2>
+                <ul>
+                    {album.comments.map((comment) => (
+                        <li key={comment.id}>{comment.text}</li>
+                    ))}
+                </ul>
+                <input
+                    type="text"
+                    value={commentText}
+                    onChange={(e) => setCommentText(e.target.value)}
+                />
+                <button onClick={handleAddComment}>Add Comment</button>
+            </div>
+
         </div>
     );
 };

@@ -1,0 +1,48 @@
+@import '../styles/variables';
+@import '../styles/mixins';
+
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffc0cb; // Slightly darker pink background
+
+  form {
+    background: white;
+    padding: 2rem;
+    border-radius: $border-radius;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+
+    h2 {
+      color: $primary-color;
+      margin-bottom: 1.5rem;
+    }
+
+    input {
+      width: calc(100% - 2rem);
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      border: 1px solid $primary-color;
+      border-radius: $border-radius;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.5rem;
+      background-color: $primary-color;
+      color: white;
+      border: none;
+      border-radius: $border-radius;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+}

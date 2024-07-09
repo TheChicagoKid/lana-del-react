@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import useAlbumStore from "../store/Store.ts";
+import "../styles/Home.scss"
 
 const Home = () => {
     const { albums, fetchAlbums } = useAlbumStore();
@@ -13,7 +14,8 @@ const Home = () => {
     }, [fetchAlbums]);
 
     return (
-        <div>
+        <div className="home">
+            <img className="lana-image" src="../../lana-bad.png" alt="hi"/>
             <h1>Lana Del Rey Discography</h1>
             <ul>
                 {albums.map((album) => (

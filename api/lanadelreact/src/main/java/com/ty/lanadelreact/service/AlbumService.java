@@ -33,7 +33,8 @@ public class AlbumService {
     }
 
     public AlbumDTO updateAlbum(Long id, AlbumDTO albumDTO) {
-        Album album = albumRepository.findById(id).orElseThrow(() -> new RuntimeException("Album not found"));
+        Album album = albumRepository.findById(id).orElseThrow(() ->
+                new RuntimeException("Album not found"));
         album.setTitle(albumDTO.getTitle());
         album.setReleaseDate(albumDTO.getReleaseDate());
         album.setCoverUrl(albumDTO.getCoverUrl());

@@ -1,0 +1,57 @@
+@import './variables';
+@import './mixins';
+
+.album-detail {
+  font-family: $font-family;
+  padding: 2rem;
+
+  h1 {
+    color: $primary-color;
+  }
+
+  img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: $border-radius;
+  }
+
+  .comments {
+    margin-top: 2rem;
+
+    h2 {
+      color: $primary-color;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        @include card;
+        margin-bottom: 1rem;
+      }
+    }
+
+    input {
+      padding: 0.5rem;
+      border: 1px solid $primary-color;
+      border-radius: $border-radius;
+      width: calc(100% - 1rem);
+      margin-bottom: 1rem;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      background-color: $primary-color;
+      color: white;
+      border: none;
+      border-radius: $border-radius;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+}
